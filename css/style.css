@@ -2,14 +2,19 @@
     background-color: #b900aa;
 }
 
+.block {
+    display: grid;
+    grid-template-columns: repeat(5, 250px);
+    column-gap: 20px;
+    justify-content: center;
+}
+
 .pagination {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 759px;
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
-    padding-bottom: 40px;
+    padding-top: 30px;
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: center;
+    column-gap: 15px;
 }
 
 .page-btn {

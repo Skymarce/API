@@ -6,20 +6,17 @@ fetch('https://swapi.dev/api/people').then(data => data.json()).then(data => {cr
 // 4. После того как данные распарсили, в следующий then приходят обычные js-данные
 
 function createCard(array) {
+    document.querySelector('.block').innerHTML = '';
     array.forEach(item => document.querySelector('.block').innerHTML += `
-        <div class="row">
-            <div class="col s12 m6">
-                <div class="card">
-                    <div class="card-image">
-                        <img style="width: 100%" src="image/photo.jpg">
-                        <span class="card-title">${item.name}</span>
-                    </div>
-                    <div class="card-content">
-                        <p>Мой рост: ${item.height} <br> Моя масса: ${item.mass} <br> Цвет волос: ${item.hair_color} <br> Цвет кожи: ${item.skin_color}</p>
-                    </div>
+            <div class="card">
+                <div class="card-image">
+                    <img style="width: 100%" src="image/photo.jpg">
+                    <span class="card-title">${item.name}</span>
+                </div>
+                <div class="card-content">
+                    <p>Мой рост: ${item.height} <br> Моя масса: ${item.mass} <br> Цвет волос: ${item.hair_color} <br> Цвет кожи: ${item.skin_color}</p>
                 </div>
             </div>
-        </div>
         `
     );
 }
