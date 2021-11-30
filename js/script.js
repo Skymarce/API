@@ -6,7 +6,7 @@ fetch('https://swapi.dev/api/people').then(data => data.json()).then(data => {cr
 // 4. После того как данные распарсили, в следующий then приходят обычные js-данные
 
 function createCard(array) {
-    array.forEach(item => document.querySelector('.block1').innerHTML += `
+    array.forEach(item => document.querySelector('.block').innerHTML += `
         <div class="row">
             <div class="col s12 m6">
                 <div class="card">
@@ -29,8 +29,8 @@ function createPagination(data) {
     const pagination = document.querySelector('.pagination');
 
     pagination.innerHTML += `
-        <button class="page-btn start-page">В начало</button>
-        <button class="page=btn" id="prev" disabled> < </button>
+        <button class="start-page">В начало</button>
+        <button id="prev" disabled> < </button>
     `;
 
     let numberPage = 1;
@@ -44,8 +44,8 @@ function createPagination(data) {
     }
 
     pagination.innerHTML += `
-        <button class="page-btn" id="next"> > </button>
-        <button class="page-btn end-page">В конец</button>
+        <button id="next"> > </button>
+        <button class="end-page">В конец</button>
     `;
 
     changePage();
