@@ -60,3 +60,34 @@ function changePage() {
     });
 
 }
+
+function searchingInfo() {
+    const searchValue = document.querySelector('.search').value;
+
+    fetch(`https://swapi.dev/api/people/?search=${searchValue}`).then(data => data.json()).then(data => createCard(data.results));
+
+}
+
+document.querySelector('.search-run').addEventListener('click', () => {
+    searchingInfo();
+});
+
+/* function cancelSeacrhing() {
+
+    const searchValue = document.querySelector('.search').value;
+
+    if (searchValue == '') {
+        fetch('https://swapi.dev/api/people/?page=1').then(data => data.json()).then(data => createCard(data.results));
+    }
+
+}
+
+setTimeout(cancelSeacrhing, 2000); */
+
+function cancelSeacrhing() {
+    fetch('https://swapi.dev/api/people/?page=1').then(data => data.json()).then(data => createCard(data.results));
+}
+
+document.querySelector('.search-cancel').addEventListener('click', () => {
+    cancelSeacrhing();
+});
