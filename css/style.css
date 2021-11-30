@@ -1,0 +1,52 @@
+.block11 {
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100px;
+    border: 2px solid #b900aa;
+}
+
+.active {
+    background-color: #b900aa;
+}
+
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 759px;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    padding-bottom: 40px;
+}
+
+.page-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 5%;
+    background-color:rgb(226, 226, 226);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+}
+
+.start-page {
+    width: 100px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}
+
+.end-page {
+    width: 100px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}
