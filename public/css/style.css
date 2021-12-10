@@ -1,0 +1,137 @@
+.active {
+    background-color: #636363 !important;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.modal-window {
+    position: fixed;
+    background-color:rgb(0, 0, 0);
+    width: 300px !important;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 30px;
+    
+}
+
+.close-modal {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.close-modal button {
+    width: 25px;
+    height: 25px;
+    background-color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.more-info p {
+    color: white;
+}
+
+.header {
+    margin-top: 15px;
+}
+
+.header-btns {
+    display: grid;
+    grid-template-columns: repeat(2, 60px);
+    justify-content: center;
+    column-gap: 15px;
+}
+
+.search {
+    padding: 0 20px !important;
+    width: 400px !important;
+    display: block !important;
+    margin: 0 auto !important;
+    margin-bottom: 15px !important;
+    background-color:rgb(241, 241, 241) !important;
+}
+
+.search-run, .search-cancel {
+    width: 60px;
+    height: 30px;
+    background-color: black;
+    color: white;
+    font-size: 13px;
+    border: none;
+    outline: none;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.block {
+    display: grid;
+    grid-template-columns: repeat(5, 250px);
+    column-gap: 20px;
+    justify-content: center;
+}
+
+.btn-more {
+    margin-top: 10px;
+    width: 80px;
+    height: 20px;
+    font-size: 9px;
+    background-color: black;
+    color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.pagination {
+    padding-top: 30px;
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: center;
+    column-gap: 15px;
+    padding-bottom: 40px;
+}
+
+.page-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 5%;
+    background-color:rgb(226, 226, 226);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+}
+
+.start-page {
+    width: 100px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}
+
+.end-page {
+    width: 100px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}
+
+#next, #prev {
+    width: 30px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+}

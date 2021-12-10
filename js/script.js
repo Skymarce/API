@@ -57,18 +57,25 @@ function changePage() {
 
     page.forEach(item => {
         item.addEventListener('click', () => {
+
             clearActive();
+
             item.classList.add('active');
-            fetch(`https://swapi.dev/api/people/?page=${item.textContent}`).then(data => data.json()).then(data => createCard(data.results));
+
+            fetch(`https://swapi.dev/api/people/?page=${item.textContent}`).then(data => data.json()).then(data => {createCard(data.results), modal()});
+
         });
     });
 
 }
 
 function searchingInfo() {
+
     const searchValue = document.querySelector('.search').value;
 
-    fetch(`https://swapi.dev/api/people/?search=${searchValue}`).then(data => data.json()).then(data => createCard(data.results));
+    fetch(`https://swapi.dev/api/people/?search=${searchValue}`).then(data => data.json()).then(data => {createCard(data.results), modal()});
+
+    document.querySelector('.pagination').style.display = 'none';
 
 }
 
@@ -78,7 +85,9 @@ document.querySelector('.search-run').addEventListener('click', () => {
 
 function cancelSeacrhing() {
 
-    fetch('https://swapi.dev/api/people/?page=1').then(data => data.json()).then(data => createCard(data.results));
+    fetch('https://swapi.dev/api/people/?page=1').then(data => data.json()).then(data => {createCard(data.results), modal()});
+
+    document.querySelector('.search').value = '';
 
 }
 
@@ -177,11 +186,8 @@ function moveNext() {
         changePage += 1;
         
         if (changePage < arrayLength) {
-            fetch(`https://swapi.dev/api/people/?page=${changePage}`).then(data => data.json()).then(data => createCard(data.results));
-        } else {
-            fetch('https://swapi.dev/api/people/?page=1').then(data => data.json()).then(data => createCard(data.results));
-            clearActive();
-        }
+            fetch(`https://swapi.dev/api/people/?page=${changePage}`).then(data => data.json()).then(data => {createCard(data.results), modal()});
+        } 
 
         clearActive();
 
@@ -200,9 +206,7 @@ function movePrev() {
         changePage -= 1;
 
         if (changePage >= 1) {
-            fetch(`https://swapi.dev/api/people/?page=${changePage}`).then(data => data.json()).then(data => createCard(data.results));
-        } else {
-            fetch(`https://swapi.dev/api/people/?page=${changePage}`).then(data => data.json()).then(data => createCard(data.results))
+            fetch(`https://swapi.dev/api/people/?page=${changePage}`).then(data => data.json()).then(data => {createCard(data.results), modal()});
         }
 
         clearActive();
@@ -212,4 +216,3 @@ function movePrev() {
     });
 
 }
-
