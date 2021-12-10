@@ -75,6 +75,8 @@ function searchingInfo() {
 
     fetch(`https://swapi.dev/api/people/?search=${searchValue}`).then(data => data.json()).then(data => {createCard(data.results), modal()});
 
+    document.querySelector('.pagination').style.display = 'none';
+
 }
 
 document.querySelector('.search-run').addEventListener('click', () => {
@@ -214,4 +216,3 @@ function movePrev() {
     });
 
 }
-

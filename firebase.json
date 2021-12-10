@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "apiproject1",
     "public": "public",
     "ignore": [
       "firebase.json",
